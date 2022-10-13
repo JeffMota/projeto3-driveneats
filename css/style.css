@@ -49,6 +49,9 @@ header h3 {
 
     overflow-y: hidden;
 }
+.conteiner_pratos::-webkit-scrollbar{
+    display: none;
+}
 
 .categoria {
     font-family: 'Righteous', cursive;
@@ -70,10 +73,9 @@ header h3 {
     border-radius: 9px;
     margin: 0 7.5px;
 
+    position: relative;
+
     background-color: #ffff;
-}
-.prato::-webkit-scrollbar{
-    display: none;
 }
 .prato img {
     width: 100%;
@@ -95,4 +97,18 @@ header h3 {
 }
 .prato h3 {
     margin: 10px 0;
+}
+/*-------------------------Seleção-----------------------------------*/
+.selecionado {
+    padding: 10px;
+    border: 5px solid;
+    border-color: #32B72F;
+}
+.selecionado ion-icon{
+    font-size: 20px;
+    right: 10px;
+    bottom: 10px;
+
+    position: absolute;
+    color: #32B72F;
 }

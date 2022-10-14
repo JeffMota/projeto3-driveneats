@@ -73,7 +73,7 @@ header h3 {
     margin-top: 30px;
 }
 
-.prato {
+.card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -85,17 +85,19 @@ header h3 {
     border-radius: 9px;
     margin: 0 7.5px;
 
+    cursor: pointer;
+
     position: relative;
 
     background-color: #ffff;
 }
-.prato ion-icon{
+.card ion-icon{
     display: none;
 }
-.prato img {
+.card img {
     width: 100%;
 }
-.prato h2 {
+.card h2 {
     font-weight: 700;
     margin: 10px 0;
 
@@ -103,14 +105,14 @@ header h3 {
     font-size: 16px;
 
 }
-.prato p {
+.card p {
     font-weight: 300;
     margin: 3px 0;
 
     color: #A6A6A6;
     font-size: 15px;
 }
-.prato h3 {
+.card h3 {
     margin-top: 10px;
 }
 /*-------------------------Seleção-----------------------------------*/

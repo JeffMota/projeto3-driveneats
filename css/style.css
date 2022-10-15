@@ -81,7 +81,8 @@ header h3 {
 
     font-family: 'Roboto', sans-serif;
 
-    min-width: 172px;
+    width: 172px;
+    max-height: 240px;
     padding: 15px;
     border-radius: 9px;
     margin: 5px 7.5px;
@@ -112,7 +113,7 @@ header h3 {
     margin: 3px 0;
 
     color: #A6A6A6;
-    font-size: 15px;
+    font-size: clamp(8px, 1em, 15px);
 }
 .card h3 {
     margin-top: 10px;
@@ -239,6 +240,11 @@ header h3 {
     margin-top: 10px;
 
     cursor: pointer;
+    background-color: #ffff;
+}
+.btn_confirme:hover{
+    transition: 300ms;
+    letter-spacing: 1.5px;
 }
 .btn_cancelar {
     background-color: #50d074;

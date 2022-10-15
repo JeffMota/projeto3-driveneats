@@ -13,24 +13,41 @@ const precoTotal = document.querySelector('.preco_total')
 let pedido = [];
 let precos = [];
 let precosNumber = [];
+let total;
+
+let nome = "";
+let endereco = "";
 
 const fecharPedido = () => {
+    if (nome == "") {
+        nome = prompt('Qual o seu nome?');
+        endereco = prompt('Qual o endereço?');
+    }
+
     let i = 0;
     nomeItem.forEach(element => {
         element.innerText = pedido[i];
-        i = i+1;
+        i = i + 1;
     })
     let j = 0;
     precosItens.forEach(preco => {
         preco.innerHTML = precos[j];
-        precosNumber[j] = Number(precos[j].replace(',','.'));
-        j = j+1;
-        console.log(precos)
+        precosNumber[j] = Number(precos[j].replace(',', '.'));
+        j = j + 1;
     })
-    let total = String((precosNumber[0] + precosNumber[1] + precosNumber[2]).toFixed(2))
-    precoTotal.innerHTML = "R$ " + total.replace('.',',');
+    total = String((precosNumber[0] + precosNumber[1] + precosNumber[2]).toFixed(2))
+    precoTotal.innerHTML = "R$ " + total.replace('.', ',');
 
     confirmar.classList.remove('escondido');
+
+    let msg = `Olá, gostaria de fazer o pedido:
+- Prato: ${pedido[0]}
+- Bebida: ${pedido[1]}
+- Sobremesa: ${pedido[2]}
+Total: R$ ${total}
+
+Nome: ${nome}
+Endereço: ${endereco}`;
 
     //Cancelar o pedido
     btnCancelar.addEventListener('click', () => {
@@ -38,15 +55,14 @@ const fecharPedido = () => {
     })
     //Fechar o pedido
     btnFechar.addEventListener('click', () => {
+        window.location.href = `https://wa.me/5573998434908?text=${encodeURIComponent(msg)}`
         console.log('pedido fechado');
     })
 
-    console.log(precos)
 }
 
 const check = () => {
     if (pedido[0] && pedido[1] && pedido[2]) {
-        console.log('pode pedir');
         botao.classList.add('liberado');
         botao.innerText = 'Fechar pedido';
 

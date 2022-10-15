@@ -4,10 +4,22 @@ const sobremesas = document.querySelectorAll('.sobremesa')
 
 const botao = document.querySelector('.botao')
 
+let pedido = [];
 
-let prato = '';
-let bebida = '';
-let sobremesa = '';
+const fecharPedido = () => {
+
+}
+
+const check = () => {
+    if (pedido[0] && pedido[1] && pedido[2]) {
+        console.log('pode pedir')
+        botao.classList.add('liberado')
+        botao.innerText = 'Fechar pedido';
+
+        botao.addEventListener('click', fecharPedido)
+        console.log(pedido)
+    }
+}
 
 // Selecionando o Prato
 pratos.forEach(element => {
@@ -21,8 +33,9 @@ pratos.forEach(element => {
                     element.classList.remove('selecionado');
                 }
             })
-            prato = element.children[1].innerText;
+            pedido[0] = element.children[1].innerText;
             element.classList.add('selecionado');
+            check();
         }
     });
 });
@@ -38,8 +51,9 @@ bebidas.forEach(element => {
                     element.classList.remove('selecionado');
                 }
             })
-            bebida = element.children[1].innerText;
+            pedido[1] = element.children[1].innerText;
             element.classList.add('selecionado');
+            check();
         }
     });
 });
@@ -55,20 +69,11 @@ sobremesas.forEach(element => {
                     element.classList.remove('selecionado');
                 }
             })
-            sobremesa = element.children[1].innerText;
+            pedido[2] = element.children[1].innerText;
             element.classList.add('selecionado');
+            check();
         }
-    });
+    })
 });
 
 
-//if (prato != '' && bebida != '' && sobremesa != '') {
-//    console.log(prato)
-//    console.log(bebida)
-//    console.log(sobremesa)
-//    botao.innerHTML.classList.add('liberado')
-//    botao.addEventListener('click')
-//}
-//else {
-//    botao.classList.remove('liberado')
-//}

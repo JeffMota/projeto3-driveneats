@@ -81,8 +81,10 @@ header h3 {
 
     font-family: 'Roboto', sans-serif;
 
-    width: 172px;
+    min-width: 172px;
+    max-width: 172px;
     max-height: 240px;
+    min-height: 240px;
     padding: 15px;
     border-radius: 9px;
     margin: 5px 7.5px;

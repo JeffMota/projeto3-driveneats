@@ -44,7 +44,7 @@ const fecharPedido = () => {
 - Prato: ${pedido[0]}
 - Bebida: ${pedido[1]}
 - Sobremesa: ${pedido[2]}
-Total: R$ ${total}
+Total: R$ ${total.replace('.',',')};
 
 Nome: ${nome}
 Endereço: ${endereco}`;
